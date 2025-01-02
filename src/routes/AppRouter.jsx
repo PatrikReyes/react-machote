@@ -9,7 +9,7 @@ import Loading from "../components/loading/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { consLogged } from "../const/consLogged";
-import { startRefreshToken } from "../store/slices/auth/thunks";
+import { startGetVer, startRefreshToken } from "../store/slices/auth/thunks";
 
 export const AppRouter = () => {
   const { logged } = useSelector((state) => state.userReducer);
@@ -17,7 +17,9 @@ export const AppRouter = () => {
 
   // ejecuta la primra vez que carga la app
   useEffect(() => {
-    //  dispatch(startRefreshToken());
+    console.log("ds");
+    dispatch(startGetVer());
+    dispatch(startRefreshToken());
   }, []);
 
   if (logged === consLogged.STARTING) return <Loading />;

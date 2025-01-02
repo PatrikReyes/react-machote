@@ -4,14 +4,18 @@ import { consLogged } from "../../../const/consLogged";
 export const userSlice = createSlice({
   name: "auth",
   initialState: {
-    logged: consLogged.LOGGED,
+    logged: consLogged.STARTING,
     loginErr: null,
     loadingLogin: false,
     user: {
       nombre: "Patrik Reyes",
     },
+    backendVer: "---",
   },
   reducers: {
+    storeBackendVer: (state, { payload }) => {
+      state.backendVer = payload;
+    },
     setLoginErr: (state, action) => {
       state.loginErr = action.payload;
       state.loadingLogin = false;
@@ -34,5 +38,11 @@ export const userSlice = createSlice({
   },
 });
 
-export const { setLoginErr, setLoadingLogin, setLogged, storeUser, logOut } =
-  userSlice.actions;
+export const {
+  storeBackendVer,
+  setLoginErr,
+  setLoadingLogin,
+  setLogged,
+  storeUser,
+  logOut,
+} = userSlice.actions;

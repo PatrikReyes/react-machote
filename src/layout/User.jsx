@@ -8,7 +8,14 @@ export const User = ({ collapsed }) => {
 
   if (collapsed) {
     return (
-      <div style={{ textAlign: "center", fontSize: 12, marginBottom: 10 }}>
+      <div
+        style={{
+          textAlign: "center",
+          fontSize: 12,
+          marginBottom: 10,
+          marginTop: 15,
+        }}
+      >
         <Tooltip title={user?.nombre}>
           <UserOutlined />
         </Tooltip>
@@ -17,7 +24,14 @@ export const User = ({ collapsed }) => {
   }
 
   return (
-    <div style={{ textAlign: "center", fontSize: 12, marginBottom: 10 }}>
+    <div
+      style={{
+        textAlign: "center",
+        fontSize: 12,
+        marginBottom: 10,
+        marginTop: 15,
+      }}
+    >
       <UserOutlined /> {user?.nombre}
     </div>
   );

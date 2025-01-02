@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function fetch(method, url, body) {
+export async function fetchData(method, url, body) {
 
   const token = localStorage.getItem("token");
   

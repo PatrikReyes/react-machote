@@ -1,7 +1,7 @@
 {
-  "name": "subasta30-admin",
+  "name": "edufin-alumno",
   "private": true,
-  "version": "0.0.0",
+  "version": "18.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.2.6",
+    "@ant-design/icons": "^5.5.2",
     "@reduxjs/toolkit": "^1.9.5",
-    "antd": "^5.20.1",
+    "antd": "^5.22.5",
     "axios": "^1.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

@@ -1,24 +1,12 @@
-import React, { useState } from "react";
+
 import logo from "../../assets/LogoFull.png";
 import { Alert, Button, Input } from "antd";
-import { useDispatch, useSelector } from "react-redux";
-import { startLogin } from "../../store/slices/auth/thunks";
+
+import { useLogin } from "./useLogin";
 
 export const Login = () => {
-  const dispatch = useDispatch();
-  const { loginErr, loadingLogin } = useSelector((state) => state.userReducer);
-  const [data, setData] = useState({});
-
-  const changeData = ({ target }) => {
-    setData({ ...data, [target.name]: target.value });
-  };
-
-  const formSubmit = () => dispatch(startLogin(data));
-
-  const isDiabled = () => {
-    if (!data.email || !data.password || loadingLogin) return true;
-    return false;
-  };
+ 
+  const {data, loginErr, loadingLogin, changeData, formSubmit,isDiabled} = useLogin()
 
   ////
   return (

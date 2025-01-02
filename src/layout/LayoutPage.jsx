@@ -4,12 +4,20 @@ import { MenuLayout } from "./MenuLayout";
 import Logo from "./Logo";
 import { User } from "./User";
 import { Logout } from "./Logout";
+import { Ver } from "./Ver";
+import { BookTwoTone } from "@ant-design/icons";
+import useWindowDimensions from "../hooks/useWindowDimensions";
+import { MobileLayout } from "./MobileLayout";
 const { Content, Sider } = Layout;
 
 //
 
 export const LayoutPage = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
+
+  const {width} = useWindowDimensions();
+
+  if(width < 668) return <MobileLayout children={children}/>
 
   //
   return (
@@ -25,12 +33,15 @@ export const LayoutPage = ({ children }) => {
         style={{ backgroundColor: "#fff" }}
       >
         <Logo collapsed={collapsed} />
-        <User />
+        <User collapsed={collapsed}/>
         <Divider />
         <MenuLayout />
         <Divider />
+     
         <Logout collapsed={collapsed} />
+      
       </Sider>
+      
       <Layout>
         <Content
           style={{
@@ -38,7 +49,9 @@ export const LayoutPage = ({ children }) => {
           }}
         >
           {children}
+          <Ver />
         </Content>
+      
       </Layout>
     </Layout>
   );
