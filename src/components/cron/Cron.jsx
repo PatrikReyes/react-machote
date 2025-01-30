@@ -10,6 +10,7 @@ export default function Cron({ onFinish, minutos }) {
       value={deadline}
       format="mm:ss"
       onFinish={onFinish}
+      
     />
   );
 }

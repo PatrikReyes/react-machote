@@ -3,6 +3,7 @@ import CardPage from "../../../layout/CardPage";
 import { ExamenContent } from "./_ExamenContent";
 import { useNavigate } from "react-router-dom";
 import { useGetTemaByID } from "../../../hooks/useGetTemaByID";
+import { HistoricoExamenes } from "./historicoExamenes/HistoricoExamenes";
 
 export const Examen = () => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ export const Examen = () => {
       accionBoton1={() => navigate("/temas")}
     >
       <ExamenContent />
+      <HistoricoExamenes />
     </CardPage>
   );
 };

@@ -67,7 +67,6 @@ export const startRefreshToken = () => async (dispatch) => {
 export const startGetVer = () => async (dispatch) => {
   const url = `${_URL}/ver`;
   const res = await fetchSinToken("get", url);
-  console.log({ res });
   if (res.ok) {
     dispatch(storeBackendVer(res.data.data));
   }

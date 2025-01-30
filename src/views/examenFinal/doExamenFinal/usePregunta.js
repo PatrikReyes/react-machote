@@ -20,7 +20,7 @@ export const usePregunta = (setRespuesatsCorrectas, setPreguntaIndex, pregunta) 
     setTimeout(() => {
       setPreguntaIndex((prev) => prev + 1);
       setShowCorrecta(false);
-    }, 500);
+    }, 4500);
   };
 
 

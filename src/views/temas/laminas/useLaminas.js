@@ -3,15 +3,23 @@ import { setLaminaSeleccionada } from "../../../store/slices/contenidos/contenid
 import { _URL } from "../../../const/url";
 import { useParams } from "react-router-dom";
 import { startUpdActividadLaminas } from "../../../store/slices/contenidos/actividadesThunks";
+import { useEffect } from "react";
+import { useActualizaSesion } from "../../../hooks/useActualizaSesion";
 
 export const useLaminas = () => {
   const dispatch = useDispatch();
   const { temaID } = useParams();
+  const {actualizar} = useActualizaSesion()
   const { laminas, laminaSeleccionada } = useSelector(
     (state) => state.contenidosReducer
   );
 
+  useEffect(() => {
+    dispatch(setLaminaSeleccionada(0));
+  }, []);
+
   const avanza = () => {
+    actualizar()
     const body = {
       temaID,
       LaminasVistas: laminaSeleccionada + 2,
@@ -25,6 +33,7 @@ export const useLaminas = () => {
   };
 
   const retrocede = () => {
+    actualizar()
     if (laminaSeleccionada > 0) {
       dispatch(setLaminaSeleccionada(laminaSeleccionada - 1));
     }

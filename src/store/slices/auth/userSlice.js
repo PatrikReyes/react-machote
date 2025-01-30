@@ -11,8 +11,12 @@ export const userSlice = createSlice({
       nombre: "Patrik Reyes",
     },
     backendVer: "---",
+    minutosSesion: Date.now(),
   },
   reducers: {
+    resetMinutosSesion: (state, { payload }) => {
+      state.minutosSesion = Date.now();
+    },
     storeBackendVer: (state, { payload }) => {
       state.backendVer = payload;
     },
@@ -45,4 +49,5 @@ export const {
   setLogged,
   storeUser,
   logOut,
+  resetMinutosSesion,
 } = userSlice.actions;

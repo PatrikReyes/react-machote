@@ -9,8 +9,13 @@ export const contenidosSlice = createSlice({
     laminaSeleccionada: 0,
     puedeExamenFinal: false,
     actividadesFinalAlumno:[],
+    loading: false,
   },
   reducers: {
+
+    setLoading: (state, { payload }) => {
+      state.loading = payload;
+    },
 
     storeActividadesFinalAlumno: (state, { payload }) => {
       state.actividadesFinalAlumno = payload;
@@ -33,6 +38,7 @@ export const contenidosSlice = createSlice({
 });
 
 export const {
+  setLoading,
   storeActividadesFinalAlumno,
   setPuedeExamenFinal,
   setLaminaSeleccionada,

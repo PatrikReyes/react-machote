@@ -8,13 +8,14 @@ import { useGetLaminas } from "./useGetLaminas";
 export const Laminas = () => {
   const navigate = useNavigate();
   const { temaNombre } = useGetTemaByID();
-   useGetLaminas();
+  useGetLaminas();
 
+  //
   return (
     <CardPage
       titulo={`Láminas - ${temaNombre}`}
       tituloBoton1="Regresar"
-      accionBoton1={()=> navigate("/temas")}
+      accionBoton1={() => navigate("/temas")}
     >
       <LaminasContent />
     </CardPage>

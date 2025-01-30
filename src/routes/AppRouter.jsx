@@ -17,7 +17,6 @@ export const AppRouter = () => {
 
   // ejecuta la primra vez que carga la app
   useEffect(() => {
-    console.log("ds");
     dispatch(startGetVer());
     dispatch(startRefreshToken());
   }, []);

@@ -8,6 +8,7 @@ import { Ver } from "./Ver";
 import { BookTwoTone } from "@ant-design/icons";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import { MobileLayout } from "./MobileLayout";
+import { Sesion } from "./Sesion";
 const { Content, Sider } = Layout;
 
 //
@@ -51,8 +52,9 @@ export const LayoutPage = ({ children }) => {
           {children}
           <Ver />
         </Content>
-      
+        <Sesion />
       </Layout>
+
     </Layout>
   );
 };

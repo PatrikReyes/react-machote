@@ -10,18 +10,19 @@ export const TemasItem = ({
     temaID,
     laminasVistas,
     historialExamenes,
+
   },
 }) => {
   const navigate = useNavigate();
 
-  const examenCalif = () => {
-    if (historialExamenes.length === 0) return 0;
+  const getCalificacion = () => {
+    if(historialExamenes.length === 0) return 0;
 
-    const calif = historialExamenes[0].preguntasCorrectas;
-    const salida = calif / 40;
+    return historialExamenes[0].calificacion * 10
+  }
 
-    return salida;
-  };
+
+
   return (
     <div className="Temas_Container">
       <Row gutter={[10]}>
@@ -56,11 +57,11 @@ export const TemasItem = ({
           <Progress
             type="dashboard"
             steps={10}
-            percent={examenCalif() * 100}
+            percent={getCalificacion()*10}
             trailColor="#f1f1f1"
             strokeColor="teal"
             strokeWidth={10}
-            format={() => examenCalif() * 10}
+            format={() => getCalificacion()}
           />
         </Col>
       </Row>

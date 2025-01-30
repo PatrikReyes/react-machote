@@ -261,6 +261,14 @@ body {
 
 }
 
+.RenglonTablaLinea {
+  padding: 5px;
+  background-color: #f1f1f1;
+  color: #666;
+  border-bottom: 1px solid #ddd;
+
+}
+
 
 .MisDatos_ContenedorActividadFinal {
   width: 70%;

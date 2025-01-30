@@ -10,19 +10,19 @@ export const ExamenContent = () => {
         <img src={img} style={{ height: 200 }} alt="imagen" />
       </div>
       <div className="ExamenInicial_recuadroExamen">
-        Son 40 preguntas, todas contienen 4 respuestas de opción múltiple y solo
+        Todas las preguntas contienen 4 respuestas de opción múltiple y solo
         una respuesta será la correcta.
       </div>
       <div className="ExamenInicial_recuadroExamen">
-        En este examen cuentas con 40 minutos para su realización, en el momento
-        que se termine el tiempo, el examen se cerrará automáticamente
+        En el momento que se termine el tiempo, el examen se cerrará automáticamente, 
+        el avance y el tiempo estarán visibles en todo momento.
       </div>
       <div className="ExamenInicial_recuadroExamen">
         <div
           onClick={() => navigate(`/doExamen/${temaID}`)}
           className="Boton_EmpezarExamen"
         >
-          Empezar Examen
+          Comenzar el Examen
         </div>
       </div>
     </div>

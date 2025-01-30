@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { startGetPreguntasByTemaID } from "../../../../store/slices/contenidos/thunks";
+import {  startGetPreguntasParaAlumno } from "../../../../store/slices/contenidos/thunks";
 import { useParams } from "react-router-dom";
 
 export const useGetPreguntas = () => {
@@ -9,10 +9,11 @@ export const useGetPreguntas = () => {
   const { temaID } = useParams();
 
   useEffect(() => {
-    dispatch(startGetPreguntasByTemaID(temaID)).then((data) =>
+    dispatch(startGetPreguntasParaAlumno(temaID)).then((data) =>
       setPreguntas(data)
     );
   }, [temaID]);
+
 
   return { preguntas };
 };

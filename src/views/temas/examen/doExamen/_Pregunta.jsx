@@ -1,6 +1,7 @@
 import { CheckCircleOutlined } from "@ant-design/icons";
 import { Button, Col, Radio, Row } from "antd";
 import React from "react";
+import { useActualizaSesion } from "../../../../hooks/useActualizaSesion";
 
 export const Pregunta = ({
   pregunta,
@@ -9,8 +10,11 @@ export const Pregunta = ({
 }) => {
   const [respuesta, setRespuesta] = React.useState();
   const [showCorrecta, setShowCorrecta] = React.useState(false);
+
+  const {actualizar} = useActualizaSesion()
+  //
   const continuar = () => {
-    const respuestaSeleccionada = pregunta.respuestasFull.find(
+    const respuestaSeleccionada = pregunta.respuestas.find(
       (a) => a.id === respuesta
     );
 
@@ -23,7 +27,8 @@ export const Pregunta = ({
     setTimeout(() => {
       setPreguntaIndex((prev) => prev + 1);
       setShowCorrecta(false);
-    }, 500);
+      actualizar()
+    }, 3000);
   };
 
   return (
@@ -31,7 +36,7 @@ export const Pregunta = ({
       <div className="Preguntas_Pregunta">{pregunta.nombre}</div>
       <div className="Preguntas_Respuesta">
         <Radio.Group onChange={({ target }) => setRespuesta(target.value)}>
-          {pregunta.respuestasFull.map((r, index) => (
+          {pregunta.respuestas.map((r, index) => (
             <div key={index} style={{ marginBottom: 20 }}>
               <Radio value={r.id}>
                 <span
