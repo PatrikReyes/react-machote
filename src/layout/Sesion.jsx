@@ -26,8 +26,8 @@ export const Sesion = () => {
 
   if (cambiado) return <></>;
   return (
-    <div>
-      <Cron onFinish={onFinish} minutos={20} />
+    <div style={{color: "#f5f5f5"}}>
+      <Cron onFinish={onFinish} minutos={20} hide />
     </div>
   );
 };
