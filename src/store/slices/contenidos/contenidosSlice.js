@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { act } from "react";
 
 export const contenidosSlice = createSlice({
   name: "contenidos",

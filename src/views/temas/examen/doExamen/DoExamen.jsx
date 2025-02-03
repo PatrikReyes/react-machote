@@ -15,7 +15,7 @@ export const DoExamen = () => {
   const onFinish = () => setTeminado(true);
 
   
-if(!tiempoMaxMinutos) navigate("/temas")
+//if(!tiempoMaxMinutos) navigate("/temas")
 
   return (
     <CardPage titulo={`Examen - ${temaNombre}`}>

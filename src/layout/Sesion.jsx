@@ -9,7 +9,6 @@ export const Sesion = () => {
   const { minutosSesion } = useSelector((state) => state.userReducer);
 
   const onFinish = () => {
-    console.log("Terminado");
     dispatch(logOut())
   };
 
@@ -21,8 +20,6 @@ export const Sesion = () => {
     }, 300);
 
   }, [minutosSesion]);
-
-  console.log({ minutosSesion });
 
   if (cambiado) return <></>;
   return (

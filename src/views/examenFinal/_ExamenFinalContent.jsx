@@ -23,7 +23,7 @@ export const ExamenFinalContent = () => {
         se termine el tiempo, el examen se cerrará automáticamente
       </div>
 
-      {!puedeExamenFinal ? (
+      {puedeExamenFinal ? (
         <div className="ExamenInicial_recuadroExamen">
           <div
             onClick={() => navigate(`/doExamenFinal`)}
