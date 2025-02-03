@@ -6,7 +6,7 @@ import { logOut } from "../store/slices/auth/userSlice";
 export const Sesion = () => {
     const dispatch = useDispatch();
   const [cambiado, setCambiado] = useState(false);
-  const { minutosSesion } = useSelector((state) => state.userReducer);
+  const { minutosSesion } = useSelector((state) => state.sessionReducer);
 
   const onFinish = () => {
     dispatch(logOut())
