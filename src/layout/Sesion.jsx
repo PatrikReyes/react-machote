@@ -24,7 +24,7 @@ export const Sesion = () => {
   if (cambiado) return <></>;
   return (
     <div style={{display: 'none'}}>
-      <Cron onFinish={onFinish} minutos={20} hide />
+      <Cron onFinish={onFinish} minutos={240} hide />
     </div>
   );
 };
